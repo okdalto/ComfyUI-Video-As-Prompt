@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-Video-As-Prompt"
 description = "This repository provides ComfyUI custom nodes to run WAN Video-As-Prompt (VAP)."
-version = "1.0.0"
+version = "1.0.1"
 license = {file = "LICENSE"} 
 # classifiers = [
 #     # For OS-independent nodes (works on all operating systems)
