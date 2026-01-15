@@ -183,6 +183,7 @@ ckpts
 data
 logs
 outputs*
+!diffusers_vap/utils/outputs.py
 
 !requirements.txt
 !LICENSE
