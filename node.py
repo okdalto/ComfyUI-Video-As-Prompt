@@ -418,7 +418,6 @@ class WANVAP_Sample:
     ):
         """Run VAP sampling. `prompt_mot_ref` is required and may be a single string or
         multiple prompts separated by `|`, which will be converted to a list.
-        Returns frames as ComfyUI IMAGE batch.
         """
         prompt_mot_ref_list = [s.strip() for s in prompt_mot_ref.split("|")] if prompt_mot_ref else []
 
