@@ -241,7 +241,7 @@ def _device_and_dtype_for(device_hint: Optional[str] = None):
 def get_folder_list():
     base_dir = folder_paths.models_dir
     if not os.path.exists(base_dir):
-        return ["persona_live"]
+        return ["video_as_prompt"]
 
     candidates = []
     for name in os.listdir(base_dir):
@@ -250,8 +250,8 @@ def get_folder_list():
             if os.path.exists(os.path.join(full_path, "pretrained_weights")):
                 candidates.append(name)
 
-    if "persona_live" not in candidates:
-        candidates.append("persona_live")
+    if "video_as_prompt" not in candidates:
+        candidates.append("video_as_prompt")
 
     return sorted(candidates)
 
