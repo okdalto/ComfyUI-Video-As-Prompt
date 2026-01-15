@@ -1,0 +1,385 @@
+{
+  "id": "c63512ab-7965-4c82-801c-c3bc2d3bd10b",
+  "revision": 0,
+  "last_node_id": 25,
+  "last_link_id": 35,
+  "nodes": [
+    {
+      "id": 18,
+      "type": "SaveVideo",
+      "pos": [
+        1668.5021644997137,
+        265.69344414258995
+      ],
+      "size": [
+        270,
+        301.07042253521126
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 16
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CreateVideo",
+      "pos": [
+        1356.094904513121,
+        260.67980377285545
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 17
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        30
+      ]
+    },
+    {
+      "id": 25,
+      "type": "WANVAP_Sample",
+      "pos": [
+        942.1808612820539,
+        251.84673152094592
+      ],
+      "size": [
+        284.205078125,
+        314
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "WANVAP_PIPE",
+          "link": 32
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "ref_video",
+          "type": "IMAGE",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WANVAP_Sample"
+      },
+      "widgets_values": [
+        "a man is transformed into a Labubu toy character",
+        "A man stands with his back to the camera on a dirt path overlooking sun-drenched, rolling green tea plantations. He wears a blue and green plaid shirt, dark pants, and white shoes. As he turns to face the camera and spreads his arms, a brief, magical burst of sparkling golden light particles envelops him. Through this shimmer, he seamlessly transforms into a Labubu toy character. His head morphs into the iconic large, furry-eared head of the toy, featuring a wide grin with pointed teeth and red cheek markings. The character retains the man's original plaid shirt and clothing, which now fit its stylized, cartoonish body. The camera remains static throughout the transformation, positioned low among the tea bushes, maintaining a consistent view of the subject and the expansive scenery.",
+        49,
+        480,
+        832,
+        50,
+        "evenly",
+        5,
+        1975,
+        "randomize"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadVideo",
+      "pos": [
+        375.1435731323244,
+        628.8326636505127
+      ],
+      "size": [
+        282.798828125,
+        231.11046006944443
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "man-534.mp4",
+        "image"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "WANVAP_Load",
+      "pos": [
+        373.5781999581795,
+        137.53149934342133
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "WANVAP_PIPE",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WANVAP_Load"
+      },
+      "widgets_values": [
+        "ByteDance/Video-As-Prompt-Wan2.1-14B",
+        "auto"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "GetVideoComponents",
+      "pos": [
+        698.2956992614746,
+        624.684702316284
+      ],
+      "size": [
+        193.530859375,
+        66
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 13,
+      "type": "LoadImage",
+      "pos": [
+        368.988423779297,
+        267.1917459564209
+      ],
+      "size": [
+        282.798828125,
+        314
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            34
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (79).png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      15,
+      0,
+      16,
+      0,
+      "VIDEO"
+    ],
+    [
+      16,
+      17,
+      0,
+      18,
+      0,
+      "VIDEO"
+    ],
+    [
+      17,
+      16,
+      1,
+      17,
+      1,
+      "AUDIO"
+    ],
+    [
+      18,
+      16,
+      2,
+      17,
+      2,
+      "FLOAT"
+    ],
+    [
+      32,
+      20,
+      0,
+      25,
+      0,
+      "WANVAP_PIPE"
+    ],
+    [
+      33,
+      16,
+      0,
+      25,
+      2,
+      "IMAGE"
+    ],
+    [
+      34,
+      13,
+      0,
+      25,
+      1,
+      "IMAGE"
+    ],
+    [
+      35,
+      25,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917354,
+      "offset": [
+        -206.37689088957907,
+        90.27781145725703
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.35.9"
+  },
+  "version": 0.4
+}
